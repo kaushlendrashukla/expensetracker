@@ -44,21 +44,20 @@ const AuthForm = () => {
         }
       )
         .then((resp) => {
-          setIsLoading(false)
           if (resp.ok) {
             console.log(enteredEmail, "succesfully signed up");
             return resp.json();
           } else {
-            resp
-              .json()
-              .then((data) => {
-                // console.log(data);
-              })
-            }         
-        }).then((data) => {
-          console.log(data)
-          authCntxt.login(data.idToken)
-        }).catch((err) => {
+            resp.json().then((data) => {
+              // console.log(data);
+            });
+          }
+        })
+        .then((data) => {
+          console.log(data);
+          authCntxt.login(data.idToken);
+        })
+        .catch((err) => {
           console.log(err);
         });
     } else {
@@ -78,27 +77,25 @@ const AuthForm = () => {
         }
       )
         .then((resp) => {
-          setIsLoading(false)
           if (resp.ok) {
             console.log(enteredEmail, "succesfully login up");
             return resp.json();
           } else {
-            resp
-              .json()
-              .then((data) => {
-                console.log(data);
-                history.replace("/ExpenseTracker");
-              })              
-            }
-        }).then((data) => {
-          console.log(data)
-          authCntxt.login(data.idToken)
+            resp.json().then((data) => {
+              console.log(data);
+            });
+          }
+        })
+        .then((data) => {
+          console.log(data);
+          authCntxt.login(data.idToken);
+          localStorage.setItem("token", data.idToken);
+          history.replace("/expense");
         })
         .catch((err) => {
           alert(err);
         });
     }
-   
   };
 
   return (
