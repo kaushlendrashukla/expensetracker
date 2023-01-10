@@ -39,6 +39,7 @@ const CompleteProfile = () => {
         }
       })
       .then((data) => {
+        alert("update succesfully...")
         console.log("Last Then", data);
       })
       .catch((err) => {

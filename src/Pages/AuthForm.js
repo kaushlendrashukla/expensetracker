@@ -104,6 +104,11 @@ const AuthForm = () => {
     
   };
 
+  const forgetPasswordHandler=()=>{
+    history.replace("/forgetpassword")
+
+  }
+
   return (
     <section>
       <div class="form">
@@ -152,6 +157,7 @@ const AuthForm = () => {
             {isLogin ? 'Create new account' : 'Login with existing account'}
           </button>
         </div>
+        {isLogin && <button class="btn" onClick={forgetPasswordHandler}>Forget Password</button>} 
         </form>
       </div>
     </section>

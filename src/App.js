@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Logout from "./Components/Logout";
 import AuthForm from "./Pages/AuthForm";
 import CompleteProfile from "./Pages/CompleteProfile";
 import ExpenseTracker from "./Pages/Expense-Tracker";
+import ForgetPassword from "./Pages/ForgetPassword";
 import AuthContext from "./Store/Auth-Context";
 
 function App() {
@@ -24,6 +24,9 @@ function App() {
         )}
         <Route path="/completeProfile" exact>
           <CompleteProfile />
+        </Route>
+        <Route path="/forgetpassword" exact>
+          <ForgetPassword/>
         </Route>
         <Route path="*">
           <Redirect to="/authform">
