@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Switch, Route, Redirect } from "react-router-dom"
+
 const AuthContext= React.createContext({
     token:" ",
     isLoggedIn:false,

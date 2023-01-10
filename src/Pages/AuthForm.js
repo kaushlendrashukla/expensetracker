@@ -44,6 +44,8 @@ const AuthForm = () => {
         }
       )
         .then((resp) => {
+          setIsLoading(false)
+          emailidInputref = ""
           if (resp.ok) {
             console.log(enteredEmail, "succesfully signed up");
             return resp.json();
@@ -54,6 +56,7 @@ const AuthForm = () => {
           }
         })
         .then((data) => {
+          
           console.log(data);
           authCntxt.login(data.idToken);
         })
@@ -77,6 +80,7 @@ const AuthForm = () => {
         }
       )
         .then((resp) => {
+          setIsLoading(false)         
           if (resp.ok) {
             console.log(enteredEmail, "succesfully login up");
             return resp.json();
@@ -96,6 +100,8 @@ const AuthForm = () => {
           alert(err);
         });
     }
+   
+    
   };
 
   return (

@@ -12,7 +12,7 @@ const CompleteProfile = () => {
     const id= localStorage.getItem('token')
 
     fetch(
-       "https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=AIzaSyBWSS3XN_E1xvIXEOThRk9X6SqgWpzUdRw",
+      "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyBWSS3XN_E1xvIXEOThRk9X6SqgWpzUdRw",
       {
         method: "POST",
         body: JSON.stringify({
@@ -43,6 +43,20 @@ const CompleteProfile = () => {
       .catch((err) => {
         console.log(err);
       });
+
+      fetch("https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyBWSS3XN_E1xvIXEOThRk9X6SqgWpzUdRw",{
+method:"POST",
+body:JSON.stringify({
+    idToken:id,
+}),
+headers:{
+"Content-Type":"application-json"
+}
+      }).then((resp)=>{
+        console.log(resp)
+      }).catch((err)=>{
+        console.log(err)
+      })
   };
   return (
     <div>
