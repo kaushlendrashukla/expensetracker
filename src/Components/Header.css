@@ -1,0 +1,19 @@
+.mainHeader {
+    display: flex;
+    background-color: rgb(161, 105, 21);
+}
+.logout { 
+    font: inherit;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+  .logout:hover {
+    background-color: #c291e2;
+    color: #38015c;
+  }

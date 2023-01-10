@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
+import ExpenseShow from "./Components/Expenses/ExpenseShow";
 import AuthForm from "./Pages/AuthForm";
 import CompleteProfile from "./Pages/CompleteProfile";
-import ExpenseTracker from "./Pages/Expense-Tracker";
+import ExpenseTracker from "./Pages/ExpenseTracker";
 import ForgetPassword from "./Pages/ForgetPassword";
 import AuthContext from "./Store/Auth-Context";
 
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route path="/forgetpassword" exact>
           <ForgetPassword/>
+        </Route>
+        <Route path="/dailyexpense" exact>
+          <ExpenseShow/>
         </Route>
         <Route path="*">
           <Redirect to="/authform">

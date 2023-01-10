@@ -109,7 +109,7 @@ body {
     color: #ae82cc;
   }
 
-  .btn{
+  .logoutbtn {
     cursor: pointer;
     font: inherit;
     color: white;
@@ -119,4 +119,5 @@ body {
     padding: 0.5rem 2.5rem;
     width: 100%;
     margin-top: 10px;
+    width: 100%;
   }

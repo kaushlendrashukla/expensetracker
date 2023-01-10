@@ -12,6 +12,8 @@ const CompleteProfile = () => {
 
     const id= localStorage.getItem('token')
 
+   
+
     fetch(
       "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyBWSS3XN_E1xvIXEOThRk9X6SqgWpzUdRw",
       {
@@ -68,7 +70,7 @@ headers:{
       <form>
         <div>
           <label> Full Name</label>
-          <input type="text" ref={nameInputRef} />
+          <input type="text" ref={nameInputRef} required />
         </div>
         <div>
           <label>Upload Your image</label>
