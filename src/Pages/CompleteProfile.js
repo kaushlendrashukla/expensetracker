@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import Logout from "../Components/Logout";
 
 const CompleteProfile = () => {
   const nameInputRef = useRef();
@@ -60,6 +61,9 @@ headers:{
   };
   return (
     <div>
+        <div>
+            <Logout/>
+        </div>
       <form>
         <div>
           <label> Full Name</label>

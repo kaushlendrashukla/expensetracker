@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
+import Logout from "./Components/Logout";
 import AuthForm from "./Pages/AuthForm";
 import CompleteProfile from "./Pages/CompleteProfile";
 import ExpenseTracker from "./Pages/Expense-Tracker";
@@ -17,7 +18,7 @@ function App() {
         </Route>
 
         {isLoggedIn && (
-          <Route path="/expense" exact>
+          <Route path="/expense" exact>            
             <ExpenseTracker />
           </Route>
         )}

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import Logout from '../Components/Logout'
 
 const ExpenseTracker = () => {
   const history=useHistory()
@@ -27,6 +28,9 @@ const ExpenseTracker = () => {
   return (
     
     <div>
+      <div>
+      <Logout/>
+      </div>
       <h1>Welcome To Expense Tracker</h1>
 
       <p>Your Profile is incomplete</p>
