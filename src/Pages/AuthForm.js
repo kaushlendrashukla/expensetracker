@@ -80,7 +80,7 @@ const AuthForm = () => {
         }
       )
         .then((resp) => {
-          setIsLoading(false)         
+          setIsLoading(false)
           if (resp.ok) {
             console.log(enteredEmail, "succesfully login up");
             return resp.json();
@@ -91,6 +91,7 @@ const AuthForm = () => {
           }
         })
         .then((data) => {
+          setIsLoading(false)
           console.log(data);
           authCntxt.login(data.idToken);
           localStorage.setItem("token", data.idToken);
@@ -100,7 +101,10 @@ const AuthForm = () => {
           alert(err);
         });
     }
-   
+    emailidInputref.current.value = "";
+    passwordInputRef.current.value = "";
+    confirmPaswordInputRef.current.value = "";
+    
     
   };
 

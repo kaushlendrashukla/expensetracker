@@ -6,7 +6,9 @@ const ExpenseShow = () => {
   return (
     <div>
         <Expenses/>
+       
         <ExpenseList/>
+      
     </div>
   )
 }
